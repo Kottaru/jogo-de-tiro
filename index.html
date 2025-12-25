@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arena Shooter .io</title>
+    <title>Arena Waves .io</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="ui-container">
-        <div id="score-board">Kills: <span id="score">0</span></div>
-        <div id="health-container">
-            <div id="health-bar"></div>
+    <div id="ui">
+        <div class="stat-box">
+            <div class="label">ONDA</div>
+            <div id="wave-val" class="value">1</div>
+        </div>
+        <div class="stat-box">
+            <div class="label">KILLS</div>
+            <div id="kills-val" class="value">0</div>
+        </div>
+        <div class="health-ui">
+            <div class="bar-bg"><div id="shield-bar" class="bar-fill shield"></div></div>
+            <div class="bar-bg"><div id="hp-bar" class="bar-fill hp"></div></div>
         </div>
     </div>
 
+    <div id="wave-alert">NOVA ONDA CHEGANDO...</div>
+
     <div id="game-over">
-        <h1>FIM DE JOGO</h1>
-        <p>Você eliminou <span id="final-score">0</span> bots.</p>
+        <h1>GAME OVER</h1>
+        <p>Você sobreviveu até a Onda <span id="final-wave">0</span></p>
         <button onclick="location.reload()">REINICIAR</button>
     </div>
 
