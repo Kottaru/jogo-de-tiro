@@ -2,36 +2,43 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arena Waves .io</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Arena Ultimate - Minimap & Combat</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="ui">
-        <div class="stat-box">
-            <div class="label">ONDA</div>
-            <div id="wave-val" class="value">1</div>
-        </div>
-        <div class="stat-box">
-            <div class="label">KILLS</div>
-            <div id="kills-val" class="value">0</div>
-        </div>
-        <div class="health-ui">
-            <div class="bar-bg"><div id="shield-bar" class="bar-fill shield"></div></div>
-            <div class="bar-bg"><div id="hp-bar" class="bar-fill hp"></div></div>
+        <div class="wave-info">ONDA <span id="wave-val">1</span></div>
+        <div class="weapon-info">ARMA: <span id="weapon-name">FACA</span> <br> <small>(Teclas 1 e 2)</small></div>
+        <div class="bars">
+            <div class="bar-container"><div id="shield-bar" class="fill shield"></div></div>
+            <div class="bar-container"><div id="hp-bar" class="fill hp"></div></div>
         </div>
     </div>
 
-    <div id="wave-alert">NOVA ONDA CHEGANDO...</div>
+    <div id="minimap-container">
+        <canvas id="minimapCanvas"></canvas>
+    </div>
+
+    <div id="wave-banner">ONDA 1</div>
+
+    <div id="mobile-controls">
+        <div id="joystick-base"><div id="joystick-stick"></div></div>
+        <div id="action-buttons">
+            <button id="btn-attack" class="mobile-btn">ATACAR</button>
+            <div class="weapon-toggle">
+                <button id="btn-knife" class="mobile-btn mini">1</button>
+                <button id="btn-gun" class="mobile-btn mini">2</button>
+            </div>
+        </div>
+    </div>
 
     <div id="game-over">
-        <h1>GAME OVER</h1>
-        <p>Você sobreviveu até a Onda <span id="final-wave">0</span></p>
+        <h1 id="death-msg">VOCÊ MORREU</h1>
         <button onclick="location.reload()">REINICIAR</button>
     </div>
 
     <canvas id="gameCanvas"></canvas>
-
     <script src="script.js"></script>
 </body>
 </html>
