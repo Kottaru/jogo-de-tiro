@@ -1,18 +1,30 @@
-body, html { margin: 0; overflow: hidden; background: #000; font-family: sans-serif; }
-#ui { position: absolute; top: 20px; left: 20px; color: white; pointer-events: none; z-index: 10; }
-.wave-info { font-size: 30px; font-weight: bold; color: #f1c40f; }
-.weapon-info { font-size: 14px; color: #aaa; margin: 5px 0; }
-.bar-container { width: 200px; height: 10px; background: #333; margin: 5px 0; border-radius: 5px; overflow: hidden; }
+body, html { margin: 0; overflow: hidden; background: #000; font-family: sans-serif; user-select: none; touch-action: none; }
+#ui { position: absolute; top: 15px; left: 15px; color: white; pointer-events: none; z-index: 10; }
+.wave-info { font-size: 28px; font-weight: bold; color: #f1c40f; }
+.weapon-info { font-size: 12px; color: #aaa; margin: 5px 0; }
+.bar-container { width: 180px; height: 10px; background: #333; margin: 5px 0; border-radius: 5px; overflow: hidden; }
 .fill { height: 100%; transition: 0.2s; }
-.hp { background: #ff4757; width: 100%; }
-.shield { background: #2f35f8; width: 0%; }
-#wave-banner {
-    position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);
-    font-size: 80px; color: #f1c40f; font-weight: bold; display: none; text-shadow: 0 0 30px rgba(0,0,0,0.5);
+.hp { background: #ff4757; }
+.shield { background: #2f35f8; }
+
+/* Minimapa */
+#minimap-container {
+    position: absolute; top: 15px; right: 15px;
+    width: 150px; height: 150px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px; overflow: hidden;
 }
-#game-over {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9); display: none; flex-direction: column;
-    justify-content: center; align-items: center; color: white;
-}
+#minimapCanvas { width: 100%; height: 100%; }
+
+/* Mobile */
+#mobile-controls { display: none; position: absolute; width: 100%; height: 100%; pointer-events: none; }
+@media (pointer: coarse) { #mobile-controls { display: block; } }
+#joystick-base { position: absolute; bottom: 50px; left: 50px; width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; pointer-events: auto; }
+#joystick-stick { position: absolute; top: 20px; left: 20px; width: 40px; height: 40px; background: rgba(255,255,255,0.5); border-radius: 50%; }
+#action-buttons { position: absolute; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 10px; pointer-events: auto; }
+.mobile-btn { width: 70px; height: 70px; background: rgba(255,255,255,0.25); border: none; border-radius: 50%; color: white; font-weight: bold; }
+.mobile-btn.mini { width: 45px; height: 45px; font-size: 12px; }
+
+#game-over { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; flex-direction: column; justify-content: center; align-items: center; color: white; z-index: 100; }
 button { padding: 15px 30px; background: #2ecc71; border: none; color: white; cursor: pointer; border-radius: 5px; }
