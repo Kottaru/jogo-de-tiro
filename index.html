@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena Shooter .io</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ui-container">
+        <div id="score-board">Kills: <span id="score">0</span></div>
+        <div id="health-container">
+            <div id="health-bar"></div>
+        </div>
+    </div>
+
+    <div id="game-over">
+        <h1>FIM DE JOGO</h1>
+        <p>Você eliminou <span id="final-score">0</span> bots.</p>
+        <button onclick="location.reload()">REINICIAR</button>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
